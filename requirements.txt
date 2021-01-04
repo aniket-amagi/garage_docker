@@ -1,5 +1,0 @@
-requests
-boto3
-xmltodict
-dicttoxml
-bs4
