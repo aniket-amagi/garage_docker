@@ -1,0 +1,8 @@
+# XREF for some of the packages : https://medium.com/better-programming/the-22-most-used-python-packages-in-the-world-7020a904b2e
+wheel
+awscli
+boto3
+requests
+idna
+pyyaml
+pytz
