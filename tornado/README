@@ -13,7 +13,7 @@ e.g. docker push amagidevops/garage:segmentation
 To make this docker run by AWS Batch:
 1. You need to configure compute environment as follow:-
 
-Service rolearn:aws:iam::984678972753:role/MAPSOR-US-EAST-1-6AZ-BatchServiceRole-12D2WC8CZPMSU
+Service rolearn:aws:iam::{account_id}:role/MAPSOR-US-EAST-1-6AZ-BatchServiceRole-12D2WC8CZPMSU
 Minimum vCPUs:0
 Desired vCPUs:4
 Maximum vCPUs:256
