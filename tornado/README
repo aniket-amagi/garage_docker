@@ -19,7 +19,7 @@ Desired vCPUs:4
 Maximum vCPUs:256
 Instance typesp2.xlarge
 Allocation strategy:BEST_FIT_PROGRESSIVE
-Instance rolearn:aws:iam::984678972753:instance-profile/MAPSOR-US-EAST-1-6AZ-IamInstanceProfile-1MBK8N6RW0D5N
+Instance rolearn:aws:iam::{account_id}:instance-profile/MAPSOR-US-EAST-1-6AZ-IamInstanceProfile-1MBK8N6RW0D5N
 AMI id:ami-02a722f3a63d73b04
 
 2. You need to create Job queue using above defined compute environment.
