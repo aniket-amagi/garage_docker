@@ -1,6 +1,9 @@
 ## Base Image
 FROM ubuntu
 
+## Setting environment variables
+ENV PYTHONPATH "${PYTHONPATH}:/usr/src/garage"
+
 ## Default Packages
 RUN apt update
 RUN apt upgrade -y
