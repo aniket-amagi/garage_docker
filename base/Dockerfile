@@ -13,11 +13,11 @@ RUN apk add --no-cache python3 py3-pip gcc git python3-dev musl-dev libffi-dev o
 
 ## Adding files from local to Docker
 ADD garage_docker/python_base/fetch_and_run.sh /usr/local/bin/fetch_and_run.sh
-ADD amagi_library/requirements.txt /tmp/amagi_library_requirements.txt
+ADD pipewrench/requirements.txt /tmp/pipewrench_requirements.txt
 ADD requirements.txt /tmp/requirements.txt
 
 ## Install python packages
-RUN pip3 install -r /tmp/amagi_library_requirements.txt
+RUN pip3 install -r /tmp/pipewrench_requirements.txt
 RUN pip3 install -r /tmp/requirements.txt
 
 ## Copying Project

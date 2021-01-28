@@ -22,11 +22,11 @@ RUN python3.8 -m venv venv
 
 ## Adding Python dependencies for project
 ADD workflows/tornado/requirements.txt /root/requirements.txt
-ADD amagi_library/requirements.txt /root/amagi_library_requirements.txt
+ADD pipewrench/requirements.txt /root/pipewrench_requirements.txt
 
 ## Install necessary python packages
 RUN ./venv/bin/pip3 install -r /root/requirements.txt
-RUN ./venv/bin/pip3 install -r /root/amagi_library_requirements.txt
+RUN ./venv/bin/pip3 install -r /root/pipewrench_requirements.txt
 
 ENTRYPOINT ["/usr/local/bin/fetch_and_run.sh"]
 
