@@ -1,3 +1,3 @@
-FROM amagidevops/garage:python_base
+FROM amagidevops/garage:base
 
 RUN apk add --no-cache ffmpeg mediainfo

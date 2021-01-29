@@ -1,6 +1,6 @@
 FROM amagidevops/tornado:1.0
 USER root
-ADD workflows/tornado/docker/fetch_and_run.sh /usr/local/bin/fetch_and_run.sh
+ADD garage_docker/fetch_and_run.sh /usr/local/bin/fetch_and_run.sh
 
 RUN mkdir -p /data/assets
 RUN mkdir -p /data/out
@@ -22,7 +22,7 @@ RUN python3.8 -m venv venv
 
 ## Adding Python dependencies for project
 ADD workflows/tornado/requirements.txt /root/requirements.txt
-ADD pipewrench/requirements.txt /root/pipewrench_requirements.txt
+ADD pipewrench/amagi_library/requirements.txt /root/pipewrench_requirements.txt
 
 ## Install necessary python packages
 RUN ./venv/bin/pip3 install -r /root/requirements.txt
