@@ -7,7 +7,7 @@ ENV PYTHONPATH "${PYTHONPATH}:/tmp/garage"
 ## Default Packages
 RUN apt update
 RUN apt upgrade -y
-RUN apt install python3 python3-pip gcc -y
+RUN apt install python3 python3-pip gcc git -y
 
 ## Adding files from local to Docker
 ADD pipewrench/amagi_library/requirements.txt /tmp/pipewrench_requirements.txt
