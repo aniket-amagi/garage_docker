@@ -11,3 +11,7 @@ docker push amagidevops/garage:{tag_name}
 
 Experimental:
 Try building with --squash option 
+
+Xref : 
+1. https://www.sandtable.com/reduce-docker-image-sizes-using-alpine/
+2. https://github.com/wagoodman/dive
