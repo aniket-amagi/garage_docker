@@ -7,12 +7,14 @@ ENV PYTHONPATH "${PYTHONPATH}:/tmp/garage"
 ## Changing workdir
 WORKDIR /tmp/garage
 
-## Default Packages
-RUN apk update && apk add git && apk add --no-cache --virtual .build-deps \
- gcc python3-dev musl-dev libffi-dev openssl-dev cargo build-base jpeg-dev zlib-dev libxml2-dev libxslt-dev
+## Adding fetch_and_run.sh
+ADD garage_docker/fetch_and_run.sh /usr/local/bin/fetch_and_run.sh
 
-## Adding files from local to Docker
-ADD fetch_and_run.sh /usr/local/bin/fetch_and_run.sh
+## Default Packages
+RUN apk update && apk add git libxslt-dev && apk add --no-cache --virtual .build-deps \
+ gcc python3-dev py3-pip musl-dev libffi-dev openssl-dev cargo build-base jpeg-dev zlib-dev libxml2-dev 
+
+## Adding requirements.txt from local to Docker
 ADD pipewrench/amagi_library/requirements.txt /tmp/pipewrench_requirements.txt
 ADD requirements.txt /tmp/requirements.txt
 
