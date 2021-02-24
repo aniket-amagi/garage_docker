@@ -18,13 +18,9 @@ RUN apk update && \
 ## Add code into the docker
 COPY . .
 
-## Installing requirements from pipewrench/amagi_library
-ADD pipewrench/amagi_library/requirements.txt /tmp/pipewrench_requirements.txt
-RUN pip3 install -r /tmp/pipewrench_requirements.txt
-
-## Install requirements from garage
-ADD requirements.txt /tmp/requirements.txt
-RUN pip3 install -r /tmp/requirements.txt
+## Installing requirements from pipewrench/amagi_library and garage
+RUN pip3 install -r pipewrench/amagi_library/requirements.txt && \
+    pip3 install -r requirements.txt
 
 ## Cleanup of dependencies
 RUN apk del .build-deps
