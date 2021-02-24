@@ -1,5 +1,5 @@
 ## Base Image
-FROM ubuntu
+FROM alpine
 
 ## Setting environment variables
 ENV PYTHONPATH "${PYTHONPATH}:/usr/src/garage"
@@ -11,9 +11,9 @@ WORKDIR /usr/src/garage
 ADD garage_docker/fetch_and_run.sh /usr/local/bin/fetch_and_run.sh
 
 ## Default Packages
-RUN apt update && \
-    apt upgrade -y && \
-    apt install python3 python3-pip gcc git -y
+RUN apk update && \
+    apk add git libxslt-dev && \
+    apk add --no-cache --virtual .build-deps gcc python3-dev py3-pip musl-dev libffi-dev openssl-dev cargo build-base jpeg-dev zlib-dev libxml2-dev
 
 ## Add code into the docker
 COPY . .
@@ -26,6 +26,8 @@ RUN pip3 install -r /tmp/pipewrench_requirements.txt
 ADD requirements.txt /tmp/requirements.txt
 RUN pip3 install -r /tmp/requirements.txt
 
+## Cleanup of dependencies
+RUN apk del .build-deps
 
 ## Entrypoint for docker
 # ENTRYPOINT ["sh", "/usr/local/bin/fetch_and_run.sh"]
