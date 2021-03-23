@@ -15,13 +15,16 @@ RUN apt update && \
     apt upgrade -y && \
     apt install python3 python3-pip gcc git -y
 
-## Add code into the docker
-COPY . .
+## Add requirements first for amagi_library and garage
+COPY requirements.txt requirements.txt
+COPY pipewrench/amagi_library/requirements.txt pipewrench/amagi_library/requirements.txt
 
-## Installing requirements from pipewrench/amagi_library and garage
+## Install python packages
 RUN pip3 install -r pipewrench/amagi_library/requirements.txt && \
     pip3 install -r requirements.txt
 
+## Add code into the docker
+COPY . .
 
 ## Entrypoint for docker
 # ENTRYPOINT ["sh", "/usr/local/bin/fetch_and_run.sh"]
