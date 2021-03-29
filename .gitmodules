@@ -1,3 +1,0 @@
-[submodule "speech_to_srt/substream"]
-	path = speech_to_srt/substream
-	url = https://github.com/aniket-amagi/substream.git
