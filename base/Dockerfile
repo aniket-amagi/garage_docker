@@ -4,6 +4,9 @@ FROM ubuntu
 ## Setting environment variables
 ENV PYTHONPATH "${PYTHONPATH}:/usr/src/garage"
 
+## Setting Alias for python3
+RUN echo "alias python=/usr/bin/python3" >> ~/.bashrc
+
 ## Changing workdir
 WORKDIR /usr/src/garage
 
