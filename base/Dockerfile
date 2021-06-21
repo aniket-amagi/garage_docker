@@ -16,7 +16,7 @@ ADD garage_docker/fetch_and_run.sh /usr/local/bin/fetch_and_run.sh
 ## Default Packages
 RUN apt update && \
     apt upgrade -y && \
-    apt install python3 python3-pip gcc git -y
+    apt install python3 python3-pip gcc git mediainfo redis-server -y
 
 ## Add requirements first for amagi_library and garage
 COPY requirements.txt requirements.txt
